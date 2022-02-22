@@ -1,0 +1,45 @@
+- ((lamdba (x) ((lambda (y) y) 4) ) 5)
+  ((lambda (x) ((lambda (y) y) 4)) 5)
+    The upper form returns a seg-fault (and isn't even readed as applicTP!!), while the lower works fine.
+    Fix.
+
+- Chez-scheme's fold-right procedure is different from the Ocaml one (same structure as fold-left...)
+    We implement the chez-scheme one in stdlib.scm right?
+
+- ps.11 section main: Why does mov get only 1 argument here??
+
+
+OVERALL TODO:
+    - code_gen.ml:
+        - make_consts_table.            
+        - make_fvars_table.             
+        - generate (the heavy one).
+
+    - prims.ml:
+        - apply (variadic)
+        - car                           
+        - cdr                           
+        - cons                          
+        - set-car!                      
+        - set-cdr!                      
+
+    - stdlib.scm:
+        - fold_left (non-variadic!).    
+        - fold_right (non-variadic!).   
+        - cons* (variadic). Use fold for this! 
+
+
+gdb debugging instructions:
+    i r - show registers.
+    x/16gx $rsp - 
+    disass
+    set disassembly-flavor intel
+    bt
+    p (char*)($rbp+4*8) - print first arg as char array.
+      p (*(void**)($rbp+4*8))+1 - car
+      p (*(void**)($rbp+4*8))+9 - cdr
+
+
+Tests 2019 that we fail:
+13 - Wierd shit - Long run.
+15 - Segmentation.

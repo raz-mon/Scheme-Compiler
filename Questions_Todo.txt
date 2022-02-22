@@ -1,0 +1,91 @@
+- Fix necessary fixesd in Reader.ml.
+
+- Can unite cases in "annotate_lexical_addresses" - like Set and Def for example (there are more).
+
+- In set_box, can leave only the recursive cases, while all other (unchanged cases) will be managed by
+    | _ -> expr'
+
+
+
+
+
+
+Flow of annotate_lexical_addresses:
+    Traverse the AST, Keep a local data-structure - the lexical environment.
+    Each time you see a new lambda and go into it - extend the lexical environment by 
+    taking the parameters of the current env to be the zero'th rib of the new environment.
+    (When we exit this lambda, need to go back to the current environment --> This 
+    will be taken care of by the recursion pattern (?)).
+
+    If you see a non-lambda expression --> Traverse it's components that can potentially
+    hold variables (almost all of them, this part is easy).
+
+    The given function 'tag_lexical_address_for_var' does most of the work for us.
+    What is left is the traversal of the expr-AST, and taking care of the environment 
+    data-structure.
+
+
+Boxing:
+    We wish to box variables that answer the following criteria:
+    1. The var is read in some closure.
+    2. The var is set in some OTHER closure, and the two closures DO NOT already point to a shared rib
+        in their lexical environment.
+    
+    In practice, If a parameter of a function (lambda) needs to be boxed, we will add the expression:
+        "ScmSet'(VarParam(v, minor), ScmBox'(VarParam(v, minor) ) ) as the first line of the lambda
+        (in the lambda in which it is a PAREMETER, i.e., it is introduced (declared) ), and replace
+        all get occurrences with ScmBoxGet'(var') and all set (write) occurrences with ScmBoxSet'(var', expr').
+
+    So, for each paremeter of a function, we wish to know wether it should be boxed or not, and if 
+    it should -> Box it with the above protocol.
+
+    A read is any appearence of a variable that is not a the variable in a ScmSet' expression.
+
+    A write is an appearence of a variable as the var in a ScmSet' expression.
+
+
+<<<<<<< HEAD
+
+
+
+
+make_fvars_tbl test:
+
+[ScmLambdaSimple' (["x"],
+ ScmLambdaSimple' (["u"],
+  ScmApplicTP' (ScmVar' (VarParam ("u", 0)),
+   [ScmLambdaSimple' ([], ScmVar' (VarBound ("x", 1, 0)));
+    ScmLambdaSimple' ([],
+     ScmSet' (VarBound ("x", 1, 0),
+      ScmApplic' (ScmVar' (VarFree "+"),
+       [ScmVar' (VarBound ("x", 1, 0));
+        ScmConst' (ScmNumber (ScmRational (1, 1)))])))])));
+        ScmLambdaSimple' (["x"],
+ ScmApplicTP' (ScmVar' (VarFree "list"),
+  [ScmVar' (VarParam ("x", 0));
+   ScmSet' (VarParam ("x", 0), ScmConst' (ScmNumber (ScmRational (5, 1))))]));
+   ScmLambdaSimple' (["f"; "k"],
+ ScmApplicTP'
+  (ScmLambdaSimple' (["x"; "k"],
+    ScmApplicTP' (ScmVar' (VarBound ("f", 0, 0)),
+     [ScmLambdaSimple' (["arg"; "k"],
+       ScmApplicTP' (ScmVar' (VarBound ("x", 0, 0)),
+        [ScmVar' (VarBound ("x", 0, 0));
+         ScmLambdaSimple' (["xx"],
+          ScmApplicTP' (ScmVar' (VarParam ("xx", 0)),
+           [ScmVar' (VarBound ("arg", 0, 0)); ScmVar' (VarBound ("k", 0, 1))]));
+         ScmVar' (VarParam ("k", 1))]));
+      ScmVar' (VarParam ("k", 1))])),
+  [ScmLambdaSimple' (["x"; "k"],
+    ScmApplicTP' (ScmVar' (VarBound ("f", 0, 0)),
+     [ScmLambdaSimple' (["arg"; "k"],
+       ScmApplicTP' (ScmVar' (VarBound ("x", 0, 0)),
+        [ScmVar' (VarBound ("x", 0, 0));
+         ScmLambdaSimple' (["xx"],
+          ScmApplicTP' (ScmVar' (VarParam ("xx", 0)),
+           [ScmVar' (VarBound ("arg", 0, 0)); ScmVar' (VarBound ("k", 0, 1))]));
+         ScmVar' (VarParam ("k", 1))]));
+      ScmVar' (VarParam ("k", 1))]));
+   ScmVar' (VarParam ("k", 1))]))]
+=======
+>>>>>>> e275611ad8f8edb681ee0c47fceb18cb42729e7f
