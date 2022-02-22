@@ -1,0 +1,11 @@
+[ScmPair
+  (ScmSymbol "unquote",
+   ScmPair
+    (ScmPair
+      (ScmChar 'F',
+       ScmPair
+        (ScmNumber (ScmReal 121212.212121),
+         ScmPair
+          (ScmNumber (ScmRational (121212, 1)),
+           ScmPair (ScmString "the", ScmBoolean true)))),
+     ScmNil))]

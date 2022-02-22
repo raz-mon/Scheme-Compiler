@@ -1,0 +1,9 @@
+[ScmPair
+  (ScmSymbol "define",
+   ScmPair
+    (ScmSymbol "a",
+     ScmPair
+      (ScmPair
+        (ScmSymbol "lambda",
+         ScmPair (ScmSymbol "x", ScmPair (ScmSymbol "x", ScmNil))),
+       ScmNil)))]

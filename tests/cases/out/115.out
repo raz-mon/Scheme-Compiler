@@ -1,0 +1,4 @@
+[ScmPair
+  (ScmChar 'c',
+   ScmPair
+    (ScmNumber (ScmReal 37392.39382), ScmNumber (ScmRational (37393, 1))))]

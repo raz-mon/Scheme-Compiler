@@ -1,0 +1,5 @@
+[ScmPair
+  (ScmPair
+    (ScmNumber (ScmRational (1, 1)),
+     ScmPair (ScmNumber (ScmRational (2, 1)), ScmNil)),
+   ScmNumber (ScmRational (3, 1)))]

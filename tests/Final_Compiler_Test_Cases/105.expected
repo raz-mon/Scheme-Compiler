@@ -1,0 +1,2 @@
+(define world "world")
+(string-append "hello " (format "~a" world))

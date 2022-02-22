@@ -1,0 +1,2 @@
+[ScmPair
+  (ScmSymbol "a", ScmPair (ScmSymbol "b", ScmPair (ScmSymbol "c", ScmNil)))]

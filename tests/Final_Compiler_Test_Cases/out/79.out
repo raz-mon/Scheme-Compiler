@@ -1,0 +1,4 @@
+[ScmPair
+  (ScmSymbol "unquote",
+   ScmPair
+    (ScmSymbol "!$^*-_=+<>?abcdefghijklmnopqrstuvwxyz0123456787", ScmNil))]

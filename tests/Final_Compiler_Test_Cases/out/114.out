@@ -1,0 +1,5 @@
+[ScmPair
+  (ScmChar 'c',
+   ScmPair
+    (ScmNumber (ScmReal 37392.39382),
+     ScmPair (ScmNumber (ScmRational (37392, 1)), ScmString "that")))]

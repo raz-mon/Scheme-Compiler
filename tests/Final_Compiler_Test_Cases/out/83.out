@@ -1,0 +1,3 @@
+[ScmPair
+  (ScmSymbol "quote",
+   ScmPair (ScmPair (ScmBoolean true, ScmBoolean false), ScmNil))]

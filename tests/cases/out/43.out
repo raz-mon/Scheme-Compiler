@@ -1,0 +1,9 @@
+[ScmPair
+  (ScmSymbol "quasiquote",
+   ScmPair
+    (ScmPair
+      (ScmNumber (ScmRational (1, 1)),
+       ScmPair
+        (ScmNumber (ScmRational (2, 1)),
+         ScmPair (ScmNumber (ScmRational (3, 1)), ScmNil))),
+     ScmNil))]

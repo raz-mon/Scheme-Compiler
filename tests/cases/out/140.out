@@ -1,0 +1,11 @@
+[ScmPair
+  (ScmSymbol "format",
+   ScmPair
+    (ScmString "~a",
+     ScmPair
+      (ScmPair
+        (ScmSymbol "/",
+         ScmPair
+          (ScmNumber (ScmRational (2, 1)),
+           ScmPair (ScmNumber (ScmRational (3, 1)), ScmNil))),
+       ScmNil)))]

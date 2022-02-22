@@ -1,0 +1,11 @@
+[ScmPair
+  (ScmSymbol "quasiquote",
+   ScmPair
+    (ScmPair
+      (ScmChar 'D',
+       ScmPair
+        (ScmNumber (ScmReal 1234.1234),
+         ScmPair
+          (ScmNumber (ScmRational (1234, 1)),
+           ScmPair (ScmString "OK", ScmBoolean true)))),
+     ScmNil))]

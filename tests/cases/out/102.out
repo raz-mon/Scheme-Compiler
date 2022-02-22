@@ -1,0 +1,17 @@
+[ScmPair
+  (ScmChar '\n',
+   ScmPair
+    (ScmChar '\012',
+     ScmPair
+      (ScmChar '\r',
+       ScmPair
+        (ScmChar ' ',
+         ScmPair
+          (ScmChar '\t',
+           ScmPair
+            (ScmChar '\n',
+             ScmPair
+              (ScmChar '\012',
+               ScmPair
+                (ScmChar '\r',
+                 ScmPair (ScmChar ' ', ScmPair (ScmChar '\t', ScmNil))))))))))]

@@ -1,0 +1,3 @@
+[ScmPair
+  (ScmSymbol "quote",
+   ScmPair (ScmPair (ScmNumber (ScmRational (37392, 1)), ScmNil), ScmNil))]

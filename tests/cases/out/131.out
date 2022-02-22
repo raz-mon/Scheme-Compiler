@@ -1,0 +1,17 @@
+[ScmPair
+  (ScmSymbol "string-append",
+   ScmPair
+    (ScmString "14 = ",
+     ScmPair
+      (ScmPair
+        (ScmSymbol "format",
+         ScmPair
+          (ScmString "~a",
+           ScmPair
+            (ScmPair
+              (ScmSymbol "+",
+               ScmPair
+                (ScmNumber (ScmRational (14, 1)),
+                 ScmPair (ScmNumber (ScmRational (2, 1)), ScmNil))),
+             ScmNil))),
+       ScmNil)))]

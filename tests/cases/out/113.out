@@ -1,0 +1,11 @@
+[ScmPair
+  (ScmSymbol "unquote-splicing",
+   ScmPair
+    (ScmPair
+      (ScmChar 'c',
+       ScmPair
+        (ScmNumber (ScmRational (3, 4)),
+         ScmPair
+          (ScmNumber (ScmRational (4, 5)),
+           ScmPair (ScmString "this", ScmNil)))),
+     ScmNil))]

@@ -1,0 +1,3 @@
+[ScmPair
+  (ScmSymbol "unquote-splicing",
+   ScmPair (ScmString "String with unquote splicing", ScmNil))]

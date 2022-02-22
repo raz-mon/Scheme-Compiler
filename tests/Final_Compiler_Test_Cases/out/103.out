@@ -1,0 +1,7 @@
+[ScmPair
+  (ScmChar 'A',
+   ScmPair
+    (ScmNumber (ScmReal 123456.234),
+     ScmPair
+      (ScmNumber (ScmRational (555, 1)),
+       ScmPair (ScmString "test", ScmBoolean true))))]

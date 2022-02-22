@@ -1,0 +1,4 @@
+[ScmPair
+  (ScmSymbol "unquote-splicing",
+   ScmPair
+    (ScmPair (ScmBoolean true, ScmNumber (ScmRational (1, 3))), ScmNil))]

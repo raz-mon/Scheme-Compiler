@@ -1,0 +1,11 @@
+[ScmPair
+  (ScmSymbol "quote",
+   ScmPair
+    (ScmPair
+      (ScmChar 'O',
+       ScmPair
+        (ScmNumber (ScmReal 101010.01),
+         ScmPair
+          (ScmNumber (ScmRational (37392, 1)),
+           ScmPair (ScmString "comp", ScmPair (ScmBoolean true, ScmNil))))),
+     ScmNil))]

@@ -1,0 +1,2 @@
+(define format (lambda (x y) 5))
+(format "~a" (+ 2 3))

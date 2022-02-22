@@ -1,0 +1,6 @@
+[ScmPair
+  (ScmPair
+    (ScmSymbol "a", ScmPair (ScmSymbol "b", ScmPair (ScmSymbol "c", ScmNil))),
+   ScmPair
+    (ScmSymbol "d",
+     ScmPair (ScmPair (ScmSymbol "e", ScmSymbol "f"), ScmSymbol "g")))]
